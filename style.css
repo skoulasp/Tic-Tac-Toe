@@ -1,0 +1,851 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+:root {
+    --cell-height: 95vw;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-image: linear-gradient(#ff4879 1px, transparent 1px), linear-gradient(to right, #ff4879 1px, transparent 1px);
+    background-size: 14px 14px;
+    background-color: #ffcdeb;
+    /* backdrop-filter: blur(4px); */
+    height: 100%;
+    font-family: "Rubik", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+h1 {
+    font-size: 4rem;
+    font-family: "Righteous", cursive;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.title {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+}
+
+.title span {
+    color: #f7f7f7;
+    text-shadow: 1px 0px 0px rgba(0, 0, 0, 1);
+}
+
+div.heading {
+    padding: 20px 30px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    background-color: hsla(300, 100%, 97%, 0.5);
+}
+
+h2 {
+    font-size: 3rem;
+    font-family: "Righteous", cursive;
+    letter-spacing: 2px;
+    text-align: center;
+    /* margin-top: 3rem;
+    margin-bottom: 3rem; */
+    min-height: 1.25em;
+    line-height: 1.25;
+    min-width: 370px;
+}
+
+h2.playerx {
+    color: #ff5b4d;
+    text-shadow: 1px 0px 0px rgb(164, 42, 31);
+}
+
+h2.playery {
+    color: #624dff;
+    text-shadow: 1px 0px 0px rgb(43, 28, 156);
+}
+
+.main-grid {
+    align-self: center;
+    height: 100%;
+    /* background-color: rgb(0, 139, 116); */
+    max-width: 690px;
+    width: 100%;
+    max-height: 690px;
+    height: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    /* grid-gap: 5px; */
+}
+
+.area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 8.5rem;
+    height: 100%;
+    max-height: 216px;
+    /* background-color: rgb(8, 240, 139); */
+    /* margin: 0 -1px; */
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.area.pos-1 {
+    border-right: 15px solid rgb(87, 10, 150);
+    border-bottom: 15px solid rgb(87, 10, 150);
+}
+.area.pos-2 {
+    border-right: 15px solid rgb(87, 10, 150);
+    border-bottom: 15px solid rgb(87, 10, 150);
+}
+
+.area.pos-3 {
+    border-bottom: 15px solid rgb(87, 10, 150);
+}
+.area.pos-4 {
+    border-right: 15px solid rgb(87, 10, 150);
+    border-bottom: 15px solid rgb(87, 10, 150);
+}
+.area.pos-5 {
+    border-right: 15px solid rgb(87, 10, 150);
+    border-bottom: 15px solid rgb(87, 10, 150);
+}
+.area.pos-6 {
+    border-bottom: 15px solid rgb(87, 10, 150);
+}
+.area.pos-7 {
+    border-right: 15px solid rgb(87, 10, 150);
+}
+
+.area.pos-8 {
+    border-right: 15px solid rgb(87, 10, 150);
+}
+
+.playerx .area:hover:not(.active)::before {
+    content: "X";
+    color: rgba(255, 92, 77, 0.5);
+    text-shadow: 1px 0px 0px rgba(126, 11, 0, 0.5);
+    animation: fadeIn ease 400ms;
+    -webkit-animation: fadeIn ease 400ms;
+    -moz-animation: fadeIn ease 400ms;
+    -o-animation: fadeIn ease 400ms;
+    -ms-animation: fadeIn ease 400ms;
+}
+
+.playery .area:hover:not(.active)::before {
+    content: "O";
+    color: rgba(98, 77, 255, 0.5);
+    text-shadow: 1px 0px 0px rgba(14, 0, 121, 0.5);
+    animation: fadeIn ease 400ms;
+    -webkit-animation: fadeIn ease 400ms;
+    -moz-animation: fadeIn ease 400ms;
+    -o-animation: fadeIn ease 400ms;
+    -ms-animation: fadeIn ease 400ms;
+}
+
+.area.active:hover {
+    cursor: not-allowed;
+    transition: all 0.4s;
+}
+
+.main-grid.won > .area:hover::before {
+    content: "";
+    cursor: not-allowed;
+    transition: all 0.4s;
+}
+
+.main-grid.won > .area:hover {
+    cursor: not-allowed;
+    transition: all 0.4s;
+}
+
+.area:active {
+    transition: all 0.4s;
+}
+
+.play-field {
+    font-size: 8.5rem;
+}
+
+.play-field-x:before {
+    content: "X";
+    font-size: 8.5rem;
+    text-shadow: 1px 0px 0px rgb(164, 42, 31);
+    animation: fadeInLite ease 400ms;
+    -webkit-animation: fadeInLite ease 400ms;
+    -moz-animation: fadeInLite ease 400ms;
+    -o-animation: fadeInLite ease 400ms;
+    -ms-animation: fadeInLite ease 400ms;
+    color: rgb(255, 91, 77);
+}
+
+.play-field-o:before {
+    content: "O";
+    font-size: 8.5rem;
+    text-shadow: 1px 0px 0px rgb(43, 28, 156);
+    animation: fadeInLite ease 400ms;
+    -webkit-animation: fadeInLite ease 400ms;
+    -moz-animation: fadeInLite ease 400ms;
+    -o-animation: fadeInLite ease 400ms;
+    -ms-animation: fadeInLite ease 400ms;
+    color: rgb(98, 77, 255);
+}
+
+.winning {
+    background-color: rgb(255, 208, 0);
+    transition: all 0.3s;
+    backface-visibility: hidden;
+}
+
+.modal-open > :not(.modal-background, .information) {
+    filter: blur(3px);
+}
+
+.modal-open .information {
+    background-color: #ffcdeb;
+    transition: all 0.4s;
+}
+
+.bgcn .modal-open .information {
+    background: rgba(171, 171, 171, 0.6);
+    transition: all 0.4s;
+}
+
+i {
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #000000;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-style: normal;
+    width: 30px;
+    height: 30px;
+    line-height: 32px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 101;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+i:active {
+    transform: translateY(1px);
+    transition: all 0.2s;
+}
+
+.modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    animation: fadeIn 0.3s;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the modal content */
+.modal-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: rgb(255, 255, 255);
+    padding: 6rem 4rem;
+    padding-top: 2rem;
+    border-radius: 8px;
+    max-width: 50vw;
+    height: auto;
+    overflow: auto;
+    text-align: center;
+    font-size: 2rem;
+    z-index: 101;
+}
+
+div.modal-content h2 {
+    margin-bottom: 35px;
+}
+
+.modal-content p {
+    font-size: 1.5rem;
+}
+
+.modal-close {
+    position: absolute;
+    background-color: #ffcdeb;
+    border: 0;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.7rem;
+    font-size: 2rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    color: #ff4879;
+    transition: all 0.3s;
+    z-index: 101;
+}
+
+.modal-close:hover {
+    background: rgba(255, 0, 0, 0.6);
+    color: #ffffff;
+}
+
+.modal-close:active {
+    transform: translateY(1px);
+    transition: all 0.2s;
+}
+
+.fadeIn {
+    animation: fadeIn 0.3s;
+}
+
+.fadeOut {
+    animation: fadeOut 0.3s;
+}
+
+.fadeOutPerma {
+    animation: fadeOut 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.fadeOutIn {
+    animation: fadeOutIn 0.8s;
+}
+
+.winner {
+    animation: winner 0.8s ease-in-out;
+}
+
+.tie {
+    animation-name: tie;
+    animation-duration: 0.4s;
+    animation-iteration-count: 5;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLite {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutPerma {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutIn {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes winner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(15deg);
+    }
+
+    40% {
+        transform: rotate(-15deg);
+    }
+    60% {
+        transform: rotate(25deg) scale(1.1);
+    }
+
+    80% {
+        transform: rotate(-25deg) scale(1.1);
+    }
+
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+@keyframes tie {
+    0% {
+        transform: scale(1.1);
+        letter-spacing: 2px;
+    }
+
+    20% {
+        transform: scale(1.2);
+        letter-spacing: 3px;
+    }
+
+    40% {
+        transform: scale(1.3);
+        letter-spacing: 4px;
+    }
+
+    60% {
+        transform: scale(1.2);
+        letter-spacing: 3px;
+    }
+
+    80% {
+        transform: scale(1.1);
+        letter-spacing: 2px;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.area:hover {
+    cursor: pointer;
+}
+
+.exit {
+}
+
+.btn {
+    margin-top: 6rem;
+}
+
+.btn {
+    font-family: "Righteous", cursive;
+    box-shadow: inset 0px 1px 0px 0px #e184f3;
+    background: linear-gradient(to bottom, #c123de 5%, #a20dbd 100%);
+    background-color: #c123de;
+    border-radius: 4px;
+    border: 1px solid #a511c0;
+    border-bottom: 2px solid #7f0d93;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 1.4rem;
+    letter-spacing: 1.3px;
+    font-weight: bold;
+    padding: 20px 28px;
+    text-decoration: none;
+    text-shadow: 1px 0px 0px rgba(0, 0, 0, 1);
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+.btn:hover {
+    background-color: #a20dbd;
+    transform: scale(1.02);
+}
+.btn:active {
+    background: linear-gradient(to bottom, #a20dbd 5%, #c123de 100%);
+    box-shadow: 0px 4px 3px 0px rgba(0, 0, 0, 0.2);
+    transform: scale(0.99);
+}
+
+.gameover {
+    animation: fadeIn 0.4s;
+}
+
+.btn.gameover {
+    box-shadow: inset 0px 1px 0px 0px #c02e2e;
+    background-image: linear-gradient(
+        0deg,
+        hsl(0deg 74% 24%) 0%,
+        hsl(360deg 76% 26%) 6%,
+        hsl(359deg 79% 28%) 12%,
+        hsl(359deg 81% 30%) 16%,
+        hsl(359deg 83% 32%) 20%,
+        hsl(359deg 85% 33%) 25%,
+        hsl(358deg 87% 35%) 29%,
+        hsl(358deg 89% 37%) 34%,
+        hsl(358deg 92% 38%) 38%,
+        hsl(358deg 94% 40%) 44%,
+        hsl(359deg 96% 42%) 50%,
+        hsl(359deg 97% 44%) 58%,
+        hsl(359deg 99% 45%) 69%,
+        hsl(0deg 100% 47%) 97%
+    );
+    border-radius: 4px;
+    border: 1px solid #c02e2e;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 1.4rem;
+    letter-spacing: 1.3px;
+    font-weight: bold;
+    padding: 20px 28px;
+    text-decoration: none;
+    text-shadow: 1px 0px 0px rgba(0, 0, 0, 1);
+    outline: none;
+}
+
+.btn.gameover:active {
+    background-image: linear-gradient(
+        180deg,
+        hsl(0deg 74% 24%) 0%,
+        hsl(360deg 76% 26%) 6%,
+        hsl(359deg 79% 28%) 12%,
+        hsl(359deg 81% 30%) 16%,
+        hsl(359deg 83% 32%) 20%,
+        hsl(359deg 85% 33%) 25%,
+        hsl(358deg 87% 35%) 29%,
+        hsl(358deg 89% 37%) 34%,
+        hsl(358deg 92% 38%) 38%,
+        hsl(358deg 94% 40%) 44%,
+        hsl(359deg 96% 42%) 50%,
+        hsl(359deg 97% 44%) 58%,
+        hsl(359deg 99% 45%) 69%,
+        hsl(0deg 100% 47%) 97%
+    );
+}
+
+.won:hover {
+    cursor: not-allowed;
+}
+
+::selection {
+    background: #ff004c;
+    color: #fff;
+}
+::-moz-selection {
+    background: #ff004c;
+    color: #fff;
+}
+
+@media (max-width: 1000px) {
+    .title {
+        position: static;
+        text-orientation: initial;
+        writing-mode: initial;
+    }
+    h2 {
+        font-size: 3rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .btn {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .main-grid {
+        height: var(--cell-height);
+        width: calc(var(--cell-height));
+    }
+
+    .area {
+        max-height: 100%;
+        max-width: 100%;
+        height: initial;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 768px) and (pointer: coarse) {
+    .play-field-x:before {
+        content: "X";
+        animation: fadeIn ease 400ms;
+        -webkit-animation: fadeIn ease 400ms;
+        -moz-animation: fadeIn ease 400ms;
+        -o-animation: fadeIn ease 400ms;
+        -ms-animation: fadeIn ease 400ms;
+        color: #ff5b4d;
+    }
+
+    .play-field-o:before {
+        content: "O";
+        animation: fadeIn ease 400ms;
+        -webkit-animation: fadeIn ease 400ms;
+        -moz-animation: fadeIn ease 400ms;
+        -o-animation: fadeIn ease 400ms;
+        -ms-animation: fadeIn ease 400ms;
+        color: #624dff;
+    }
+
+    .playerx .area:hover:not(.active)::before {
+        content: "";
+    }
+
+    .playery .area:hover:not(.active)::before {
+        content: "";
+    }
+}
+
+@media (max-width: 500px) {
+    .area {
+        border-width: 10px;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+    .btn {
+        transform: scale(0.8);
+        /* font-size: 1rem; */
+    }
+
+    .area {
+        font-size: 7rem;
+    }
+    .play-field {
+        font-size: 7rem;
+    }
+
+    .play-field-x:before {
+        font-size: 7rem;
+    }
+
+    .play-field-o:before {
+        font-size: 7rem;
+    }
+
+    .modal-background {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 100;
+        animation: fadeIn 0.3s;
+    }
+
+    .modal-content {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        max-width: 100vw;
+        transform: none;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 320px) {
+    .area {
+        font-size: 5rem;
+    }
+    .play-field {
+        font-size: 5rem;
+    }
+
+    .play-field-x:before {
+        font-size: 5rem;
+    }
+
+    .play-field-o:before {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 250px) {
+    .area {
+        border-width: 5px;
+    }
+
+    .title {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    /* .area {
+        align-self: center;
+    } */
+
+    .area {
+        font-size: 4rem;
+    }
+    .play-field {
+        font-size: 4rem;
+    }
+
+    .play-field-x:before {
+        font-size: 4rem;
+    }
+
+    .play-field-o:before {
+        font-size: 4rem;
+    }
+}
