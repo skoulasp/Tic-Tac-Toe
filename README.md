@@ -21,12 +21,13 @@ Tic Tac Toe is a classic game where two players take turns marking spaces in a 3
 
 ## Demo
 
-You can play the game live here: https://skoulasp.github.io/Tic-Tac-Toe/
+You can play the game live [here](https://skoulasp.github.io/Tic-Tac-Toe/).
 
 ## Screenshots
 
-![Screenshot 1](/screenshots/screenshot1.png)
-![Screenshot 2](/screenshots/screenshot2.png)
+![Screenshot 1](https://i.imgur.com/7Vosbki.png)
+![Screenshot 2](https://i.imgur.com/xWB0VZx.png)
+![Screenshot 2](https://i.imgur.com/B1hEbT8.png)
 
 ## Installation
 
