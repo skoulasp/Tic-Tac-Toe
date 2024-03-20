@@ -48,4 +48,4 @@ This project was created by Petros Skoulas. If you have any questions or suggest
 
 ## License
 
-This project is licensed under the [MIT License](blob/main/license.md).
+This project is licensed under the [MIT License](license.md).

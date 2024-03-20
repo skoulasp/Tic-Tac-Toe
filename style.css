@@ -114,9 +114,8 @@ body {
     background-image: linear-gradient(#ff4879 1px, transparent 1px), linear-gradient(to right, #ff4879 1px, transparent 1px);
     background-size: 12px 12px;
     background-color: #ffcdeb;
-    /* backdrop-filter: blur(4px); */
     height: 100%;
-    /* font-family: "Righteous", sans-serif; */
+    font-family: "Righteous", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -159,11 +158,8 @@ h2 {
     font-family: "Righteous", cursive;
     letter-spacing: 2px;
     text-align: center;
-    /* margin-top: 3rem;
-    margin-bottom: 3rem; */
     min-height: 1.25em;
     line-height: 1.25;
-    /* max-width: fit-content; */
 }
 
 h2.playerx {
@@ -188,7 +184,6 @@ h2.playery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    /* grid-gap: 5px; */
 }
 
 .area {
@@ -199,8 +194,6 @@ h2.playery {
     font-size: 8.5rem;
     height: 100%;
     max-height: 216px;
-    /* background-color: rgb(8, 240, 139); */
-    /* margin: 0 -1px; */
     overflow: hidden;
     vertical-align: middle;
 }
@@ -778,7 +771,6 @@ div.modal-content h2 {
     }
     .btn {
         transform: scale(0.8);
-        /* font-size: 1rem; */
     }
 
     .area {
@@ -856,10 +848,6 @@ div.modal-content h2 {
     h2 {
         font-size: 1.8rem;
     }
-
-    /* .area {
-        align-self: center;
-    } */
 
     .area {
         font-size: 4rem;
