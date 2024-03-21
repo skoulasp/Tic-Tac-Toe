@@ -26,8 +26,8 @@ You can play the game live [here](https://skoulasp.github.io/Tic-Tac-Toe/).
 ## Screenshots
 
 ![Screenshot 1](https://i.imgur.com/EuYbYcg.png)
-![Screenshot 2](https://i.imgur.com/XGR4KjY.png)
-![Screenshot 2](https://i.imgur.com/7zdkFqq.png)
+![Screenshot 2](https://i.imgur.com/KyML8cg.png)
+![Screenshot 2](https://i.imgur.com/SEgtZtD.png)
 
 ## Installation
 
@@ -48,4 +48,4 @@ This project was created by Petros Skoulas. If you have any questions or suggest
 
 ## License
 
-This project is licensed under the [MIT License](license.md).
+This project is licensed under the [MIT License](LICENSE.md).
