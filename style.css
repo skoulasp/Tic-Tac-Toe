@@ -196,30 +196,37 @@ h2.playery {
     max-height: 216px;
     overflow: hidden;
     vertical-align: middle;
+    position: relative;
 }
 
 .area.pos-1 {
     border-right: 12px solid rgb(87, 10, 150);
     border-bottom: 12px solid rgb(87, 10, 150);
+    z-index: 2;
 }
 .area.pos-2 {
     border-right: 12px solid rgb(87, 10, 150);
     border-bottom: 12px solid rgb(87, 10, 150);
+    z-index: 3;
 }
 
 .area.pos-3 {
     border-bottom: 12px solid rgb(87, 10, 150);
+    z-index: 2;
 }
 .area.pos-4 {
     border-right: 12px solid rgb(87, 10, 150);
     border-bottom: 12px solid rgb(87, 10, 150);
+    z-index: 1;
 }
 .area.pos-5 {
     border-right: 12px solid rgb(87, 10, 150);
     border-bottom: 12px solid rgb(87, 10, 150);
+    z-index: 2;
 }
 .area.pos-6 {
     border-bottom: 12px solid rgb(87, 10, 150);
+    z-index: 1;
 }
 .area.pos-7 {
     border-right: 12px solid rgb(87, 10, 150);
@@ -308,6 +315,7 @@ h2.playery {
     background-color: rgb(255, 208, 0);
     transition: all 0.3s;
     backface-visibility: hidden;
+    z-index: -1;
 }
 
 .modal-open > :not(.modal-background, .information) {
