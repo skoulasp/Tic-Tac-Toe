@@ -25,9 +25,11 @@ You can play the game live [here](https://skoulasp.github.io/Tic-Tac-Toe/).
 
 ## Screenshots
 
-![Screenshot 1](https://i.imgur.com/EuYbYcg.png)
-![Screenshot 2](https://i.imgur.com/KyML8cg.png)
-![Screenshot 2](https://i.imgur.com/SEgtZtD.png)
+**Mid-game** ![Screenshot 1](https://i.imgur.com/EuYbYcg.png)
+
+**Game ending with a win** ![Screenshot 2](https://i.imgur.com/KyML8cg.png)
+
+**Game ending with a tie** ![Screenshot 2](https://i.imgur.com/SEgtZtD.png)
 
 ## Installation
 
